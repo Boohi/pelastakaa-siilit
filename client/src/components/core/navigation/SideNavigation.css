@@ -1,0 +1,24 @@
+.sideNavigation {
+    height: 100vh;
+    width: 10%;
+    position: fixed;
+    background-color: lightblue;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding-top: 10%;
+}
+
+.sideNavigation a {
+    padding: 25px 8px 25px 16px;
+    border: 1px solid rgb(108, 194, 223);
+    background-color: rgb(126, 200, 224);
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sideNavigation a:hover {
+    color: #f1f1f1;
+}
