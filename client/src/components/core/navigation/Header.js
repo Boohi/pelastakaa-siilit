@@ -27,7 +27,12 @@ class Header extends Component {
         return (
             <nav>
                 <div className="nav-wrapper">
-                    <Link to={this.props.auth ? '/dashboard' : '/'} className="left brand-logo">
+                <a className="btn-floating btn-large waves-effect waves-light red" onClick={this.props.toggleSideNav}><i className="material-icons">menu</i></a>
+                    <Link
+                        to={this.props.auth ? '/dashboard' : '/'}
+                        className="left brand-logo"
+                        style={{ marginLeft: 200 }}
+                    >
                         LSS.ai
                     </Link>
                     <ul className="right">{this.renderContent()}</ul>

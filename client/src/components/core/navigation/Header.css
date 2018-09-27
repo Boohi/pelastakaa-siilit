@@ -1,4 +1,9 @@
 nav {
-    margin-left: 10%;
-    width: 90%;
+    height: 64px;
+    z-index: 1000;
+}
+
+.btn-floating {
+    margin-left: 30px;
+    margin-bottom: 5px;
 }
