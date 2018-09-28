@@ -1,12 +1,20 @@
 import React from 'react';
 import Header from '../core/navigation/Header';
+import './Landing.css';
 
 const Landing = () => {
     return (
-        <div style={{ textAlign: 'center' }}>
-            <Header></Header>
-            <h1>LSS.ai</h1>
-            Boost your processes
+        <div className="landingpage">
+            <div className="card horizontal landingcard">
+                <div className="card ">
+                    <div className="card-content">
+                        <p>Welcome to lss.ai - world's best improvement tool.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/auth/google">Login</a>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
