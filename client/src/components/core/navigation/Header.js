@@ -27,7 +27,12 @@ class Header extends Component {
         return (
             <nav>
                 <div className="nav-wrapper">
-                <a className="btn-floating btn-large waves-effect waves-light red" onClick={this.props.toggleSideNav}><i className="material-icons">menu</i></a>
+                    <a
+                        className="btn-floating btn-large waves-effect waves-light red"
+                        onClick={this.props.toggleSideNav}
+                    >
+                        <i className="material-icons">menu</i>
+                    </a>
                     <Link
                         to={this.props.auth ? '/dashboard' : '/'}
                         className="left brand-logo"
