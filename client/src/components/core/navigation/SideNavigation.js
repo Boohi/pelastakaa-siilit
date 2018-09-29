@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './SideNavigation.css';
 
 class SideNavigation extends Component {
-
     render() {
         return (
             <div className="sideNavigation" style={this.props.style}>
@@ -13,11 +12,15 @@ class SideNavigation extends Component {
                 </Link>
                 <Link to="/dashboard/my_processes">
                     Processes
-                    <i className="material-icons right small">input</i>
+                    <i className="material-icons right small">graphic_eq</i>
                 </Link>
                 <Link to="/dashboard/processLibrary">
                     Library
-                    <i className="material-icons right small">library_books</i>
+                    <i className="material-icons right small">storage</i>
+                </Link>
+                <Link to="/dashboard/project">
+                    Projects
+                    <i className="material-icons right small">show_chart</i>
                 </Link>
             </div>
         );

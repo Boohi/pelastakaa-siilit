@@ -5,6 +5,7 @@ import MyProcesses from './MyProcesses';
 import Home from './Home';
 import ProcessForm from './myProcesses/ProcessForm';
 import ProcessLibrary from './ProcessLibrary';
+import Project from './Project';
 
 import Process from './myProcesses/process/Process';
 
@@ -22,6 +23,7 @@ class Dashboard extends Component {
                     />
                     <Route exact path="/dashboard/processLibrary" component={ProcessLibrary} />
                     <Route exact path="/dashboard/my_processes/process" component={Process} />
+                    <Route exact path="/dashboard/project" component={Project} />
                 </div>
             </div>
         );
