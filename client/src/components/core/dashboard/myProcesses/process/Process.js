@@ -9,16 +9,14 @@ class Process extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {id: this.props.location.state.id}
+        this.state = { id: this.props.location.state.id };
     }
-    async componentWillMount() {
-        const res = await axios.post('/api/process', {id: this.state.id} );
+    async componentDidMount() {
+        const res = await axios.post('/api/process', { id: this.state.id });
 
-        this.setState({name: res.data.name});
-        console.log(this.state);
+        this.setState({ name: res.data.name });
     }
     render() {
-        
         return (
             <div className="process">
                 <SplitPane split="horizontal" minSize={300} defaultSize={300}>
