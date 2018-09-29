@@ -6,7 +6,8 @@ import * as actions from '../actions';
 import Core from './core/Core';
 
 import Landing from './landing/Landing';
-import MyProcesses from './core/dashboard/MyProcesses';
+
+import './App.css';
 
 class App extends Component {
     componentDidMount() {
@@ -15,7 +16,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="App">
                 <BrowserRouter>
                     <Switch>
                         <Route exact path="/" component={Landing} />
