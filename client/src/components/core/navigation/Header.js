@@ -38,7 +38,7 @@ class Header extends Component {
                         className="left brand-logo txt"
                         style={{ marginLeft: 200 }}
                     >
-                        PENIS
+                        lss.ai
                     </Link>
                     <ul className="right">{this.renderContent()}</ul>
                 </div>

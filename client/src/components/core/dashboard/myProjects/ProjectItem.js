@@ -11,7 +11,16 @@ class ProjectItem extends Component {
                             <span className="card-title">{this.props.name}</span>
                             <p>{this.props.description}</p>
                         </div>
-                        <div className="card-action" />
+                        <div className="card-action">
+                            <Link
+                                to={{
+                                    pathname: '/dashboard/projects/project',
+                                    state: { id: this.props.id }
+                                }}
+                            >
+                                Go to process
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
