@@ -6,7 +6,6 @@ class Flow extends Component {
     render() {
         return (
             <div className="flow-container">
-                Flow
                 <MxGraphGridAreaEditor />
             </div>
         );

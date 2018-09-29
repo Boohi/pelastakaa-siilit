@@ -21,6 +21,8 @@ import {
     mxImage,
     mxFastOrganicLayout
 } from 'mxgraph-js';
+import 'mxgraph/javascript/src/css/common.css';
+import 'mxgraph/javascript/src/css/explorer.css';
 
 class MxGraphGridAreaEditor extends Component {
     constructor(props) {
@@ -29,7 +31,12 @@ class MxGraphGridAreaEditor extends Component {
         this.LoadGraph = this.LoadGraph.bind(this);
     }
 
+    componentDidMount() {
+        this.LoadGraph();
+    }
+
     LoadGraph(data) {
+        console.log(data);
         var container = ReactDOM.findDOMNode(this.refs.divGraph);
         var zoomPanel = ReactDOM.findDOMNode(this.refs.divZoom);
 
@@ -66,7 +73,7 @@ class MxGraphGridAreaEditor extends Component {
             graph.isCellResizable = function(cell) {
                 var geo = this.model.getGeometry(cell);
 
-                return geo == null || !geo.relative;
+                return geo === null || !geo.relative;
             };
 
             // Truncates the label to the size of the vertex
@@ -77,8 +84,8 @@ class MxGraphGridAreaEditor extends Component {
                 if (
                     !this.model.isCollapsed(cell) &&
                     geometry != null &&
-                    (geometry.offset == null ||
-                        (geometry.offset.x == 0 && geometry.offset.y == 0)) &&
+                    (geometry.offset === null ||
+                        (geometry.offset.x === 0 && geometry.offset.y === 0)) &&
                     this.model.isVertex(cell) &&
                     geometry.width >= 2
                 ) {
@@ -107,7 +114,8 @@ class MxGraphGridAreaEditor extends Component {
                 return (
                     geometry != null &&
                     !geometry.relative &&
-                    (geometry.offset == null || (geometry.offset.x == 0 && geometry.offset.y == 0))
+                    (geometry.offset === null ||
+                        (geometry.offset.x === 0 && geometry.offset.y === 0))
                 );
             };
             var layout = new mxParallelEdgeLayout(graph);
