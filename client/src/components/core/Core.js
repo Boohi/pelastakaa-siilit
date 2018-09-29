@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from './navigation/Header';
 import SideNavigation from './navigation/SideNavigation';
 import Dashboard from './dashboard/Dashboard';
@@ -16,8 +15,8 @@ class Core extends Component {
         let dashBoardStyle = '';
         this.setState((state, props) => {
             if (this.state.showSideNav) {
-                sideNavStyle = 'translateX(-75%)';
-                dashBoardStyle = 'translateX(-11%)';
+                sideNavStyle = 'translateX(-128px)';
+                dashBoardStyle = 'translateX(-128px)';
             } else {
                 sideNavStyle = 'translateX(0%)';
             }
@@ -35,7 +34,7 @@ class Core extends Component {
 
     render() {
         return (
-            <div>
+            <div className="core">
                 <Header toggleSideNav={this.toggleSideNav}/>
                 <SideNavigation
                     toggleSideNav={this.toggleSideNav}

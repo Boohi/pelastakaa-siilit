@@ -9,7 +9,7 @@ class Home extends Component {
                     <div class="col s6 s7">
                         <div class="card small">
                             <div class="card-image">
-                                <img src="images/sample-1.jpg" />
+                                <img alt="sample" src="images/sample-1.jpg" />
                                 <span class="card-title">Siili</span>
                             </div>
                             <div class="card-content">

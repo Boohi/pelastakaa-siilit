@@ -1,4 +1,7 @@
 .dashboard {
-    margin-left: 14%;
+    margin-left: 170px;
     transition: 0.5s ease-in-out;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden !important;
 }
