@@ -6,11 +6,14 @@ class MyProcesses extends Component {
         super(props);
         this.handleVisibility = this.handleVisibility.bind(this);
         this.addProcessCard = this.addProcessCard.bind(this);
+        this.deleteProcesses = this.deleteProcesses.bind(this);
+        this.deleteSingleProcess = this.deleteSingleProcess.bind(this);
         this.state = {
             visibility: false,
             processes: []
         };
     }
+
     componentDidMount() {
         try {
             const json = localStorage.getItem('processes');
@@ -21,14 +24,18 @@ class MyProcesses extends Component {
             }
         } catch (e) {}
     }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevState.processes.length !== this.state.processes.length) {
             const json = JSON.stringify(this.state.processes);
             localStorage.setItem('processes', json);
-            console.log('updated');
-            console.log(this.state.processes.length);
         }
     }
+
+    componentWillUnmount() {
+        console.log('component unmount');
+    }
+
     handleVisibility() {
         this.setState(prev => {
             return {
@@ -36,6 +43,7 @@ class MyProcesses extends Component {
             };
         });
     }
+
     addProcessCard(name) {
         if (!name) {
             return 'Enter valid name for new process!';
@@ -43,8 +51,20 @@ class MyProcesses extends Component {
             return 'This process already exists!';
         }
         this.setState(prev => ({ processes: prev.processes.concat(name) }));
-        console.log('added');
     }
+
+    deleteProcesses() {
+        this.setState(() => ({ processes: [] }));
+    }
+
+    deleteSingleProcess(processRemove) {
+        this.setState(prev => ({
+            options: prev.processes.filter(process => {
+                return processRemove !== process;
+            })
+        }));
+    }
+
     render() {
         return (
             <div>
@@ -66,14 +86,11 @@ class MyProcesses extends Component {
                     </div>
                 )}
                 <div>
-                    <div>
-                        {this.state.processes.length == 0 && (
-                            <p>Please add a process to get started.</p>
-                        )}
-                        {this.state.processes.map(process => (
-                            <Process key={process} processText={process} />
-                        ))}
-                    </div>
+                    <Processes
+                        processes={this.state.processes}
+                        deleteSingleProcess={this.deleteSingleProcess}
+                        deleteProcesses={this.deleteProcesses}
+                    />
                     <AddProcess addProcessCard={this.addProcessCard} />
                 </div>
             </div>
@@ -81,14 +98,17 @@ class MyProcesses extends Component {
     }
 }
 
-//<ProcessesList processes={this.props.processes} />
-
-const ProcessesList = props => {
+const Processes = props => {
     return (
         <div>
+            <button onClick={props.deleteProcesses}>Remove All</button>
             {props.processes.length == 0 && <p>Please add a process to get started.</p>}
             {props.processes.map(process => (
-                <AddProcess key={process} processText={process} />
+                <Process
+                    key={process}
+                    processText={process}
+                    deleteSingleProcess={props.deleteSingleProcess}
+                />
             ))}
         </div>
     );
@@ -96,14 +116,22 @@ const ProcessesList = props => {
 
 const Process = props => {
     return (
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">{props.processText}</span>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
+        <div className="row">
+            <div className="col s12 m6">
+                <div className="card blue-grey darken-1">
+                    <div className="card-content white-text">
+                        <span className="card-title">{props.processText}</span>
+                        <button
+                            onClick={e => {
+                                props.deleteSingleProcess(props.processText);
+                                console.log('down in Process, not yet fully functional');
+                            }}
+                        >
+                            remove (WIP)
+                        </button>
+                        <a className="card-action" href="#">
+                            Link to the process
+                        </a>
                     </div>
                 </div>
             </div>

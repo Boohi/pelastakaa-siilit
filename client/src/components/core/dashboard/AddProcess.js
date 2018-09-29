@@ -18,7 +18,6 @@ class AddProcess extends Component {
         }
     }
     render() {
-        console.log('rendering');
         return (
             <div>
                 {this.state.error && <p>{this.state.error}</p>}
