@@ -5,9 +5,10 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const path = require('path');
 const keys = require('./config/keys');
-//const proxy = require('http-proxy-middleware');
+const bodyParser = require('body-parser');
 
 require('./models/User');
+require('./models/Process');
 require('./services/passport');
 
 // Connect to database
@@ -15,7 +16,8 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-// Setup cookies and initialize passport
+// Setup middleware
+app.use(bodyParser.json());
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -27,6 +29,7 @@ app.use(passport.session());
 
 // Routes
 require('./routes/authRoutes')(app);
+require('./routes/processRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

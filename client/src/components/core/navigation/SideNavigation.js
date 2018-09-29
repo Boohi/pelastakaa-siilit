@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import './SideNavigation.css';
 
 class SideNavigation extends Component {
-    componentDidMount() {}
-    componentWillUnmount() {}
 
     render() {
         return (

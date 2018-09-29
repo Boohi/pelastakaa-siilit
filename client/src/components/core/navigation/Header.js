@@ -15,9 +15,10 @@ class Header extends Component {
                     </li>
                 );
             default:
+                console.log(this.props);
                 return (
                     <li>
-                        <a href="/api/logout">Logout</a>
+                        <a href="/api/logout">Logout, {this.props.auth.lastName}</a>
                     </li>
                 );
         }
