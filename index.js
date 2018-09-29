@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 require('./models/User');
 require('./models/Process');
+require('./models/Project');
 require('./services/passport');
 
 // Connect to database
@@ -30,6 +31,7 @@ app.use(passport.session());
 // Routes
 require('./routes/authRoutes')(app);
 require('./routes/processRoutes')(app);
+require('./routes/projectRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

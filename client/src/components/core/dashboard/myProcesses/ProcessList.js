@@ -15,7 +15,7 @@ class ProcessList extends Component {
         });
     }
 
-    async componentWillMount() {
+    async componentDidMount() {
         const res = await axios.get('/api/processes');
 
         await this.setStateAsync({ processes: res });

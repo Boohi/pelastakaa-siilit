@@ -9,7 +9,7 @@ const Landing = () => {
                     <div className="card-content">
                         <p>Welcome to lss.ai - world's best improvement tool.</p>
                     </div>
-                    <div class="card-action">
+                    <div className="card-action">
                         <a href="/auth/google">Login</a>
                     </div>
                 </div>
