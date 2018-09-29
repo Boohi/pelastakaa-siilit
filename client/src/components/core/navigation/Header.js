@@ -28,7 +28,7 @@ class Header extends Component {
             <nav>
                 <div className="nav-wrapper black">
                     <a
-                        className="btn-floating btn-large waves-effect waves-light blue"
+                        className="btn-floating btn-small waves-effect waves-light black"
                         onClick={this.props.toggleSideNav}
                     >
                         <i className="material-icons">menu</i>
@@ -38,7 +38,7 @@ class Header extends Component {
                         className="left brand-logo txt"
                         style={{ marginLeft: 200 }}
                     >
-                        Pelastakaa Siilit
+                        PENIS
                     </Link>
                     <ul className="right">{this.renderContent()}</ul>
                 </div>
