@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ProcessList from './myProcesses/ProcessList';
-import ProcessForm from './myProcesses/ProcessForm';
+import ProjectList from './myProjects/ProjectList';
 
 class MyProcesses extends Component {
     render() {
         return (
             <div>
-                <ProcessList />
+                <ProjectList />
                 <div className="fixed-action-btn">
                     <Link
-                        to="/dashboard/my_processes/add_process"
+                        to="/dashboard/my_processes/add_project"
                         className="btn-floating btn-large red"
                     >
                         <i className="material-icons">add</i>

@@ -18,7 +18,7 @@ class SideNavigation extends Component {
                     Library
                     <i className="material-icons right small">storage</i>
                 </Link>
-                <Link to="/dashboard/project">
+                <Link to="/dashboard/projects">
                     Projects
                     <i className="material-icons right small">show_chart</i>
                 </Link>
