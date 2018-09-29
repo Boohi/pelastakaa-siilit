@@ -5,7 +5,7 @@ import MyProcesses from './MyProcesses';
 import Home from './Home';
 import ProcessForm from './myProcesses/ProcessForm';
 
-import Process from './process/Process';
+import Process from './myProcesses/process/Process';
 
 class Dashboard extends Component {
     render() {
@@ -13,13 +13,14 @@ class Dashboard extends Component {
             <div className="dashboard" style={this.props.style}>
                 <div>
                     <Route exact path="/dashboard" component={Home} />
-                    <Route exact path="/dashboard/myProcesses" component={MyProcesses} />
+                    <Route exact path="/dashboard/my_processes" component={MyProcesses} />
                     <Route
                         exact
-                        path="/dashboard/myProcesses/add_process"
+                        path="/dashboard/my_processes/add_process"
                         component={ProcessForm}
                     />
                     <Route exact path="/dashboard/processLibrary" component={Process} />
+                    <Route exact path="/dashboard/my_processes/process" component={Process} />
                 </div>
             </div>
         );

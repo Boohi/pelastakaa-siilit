@@ -11,7 +11,7 @@ class SideNavigation extends Component {
                     Home
                     <i className="material-icons right small">home</i>
                 </Link>
-                <Link to="/dashboard/myProcesses">
+                <Link to="/dashboard/my_processes">
                     Processes
                     <i className="material-icons right small">input</i>
                 </Link>

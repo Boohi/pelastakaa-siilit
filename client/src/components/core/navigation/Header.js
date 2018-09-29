@@ -15,7 +15,6 @@ class Header extends Component {
                     </li>
                 );
             default:
-                console.log(this.props);
                 return (
                     <li>
                         <a href="/api/logout">Logout, {this.props.auth.lastName}</a>
@@ -39,7 +38,7 @@ class Header extends Component {
                         className="left brand-logo txt"
                         style={{ marginLeft: 200 }}
                     >
-                        <a className="left">Pelastakaa Siilit</a>
+                        Pelastakaa Siilit
                     </Link>
                     <ul className="right">{this.renderContent()}</ul>
                 </div>
