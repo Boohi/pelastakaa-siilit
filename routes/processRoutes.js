@@ -25,4 +25,10 @@ module.exports = app => {
 
         res.send(processes);
     });
+
+    app.post('/api/process', requireLogin, async (req, res) => {
+        const process = await Process.findOne({_id: req.body.id});
+        
+        res.send(process);
+    });
 };

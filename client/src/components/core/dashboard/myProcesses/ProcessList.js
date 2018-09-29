@@ -15,7 +15,7 @@ class ProcessList extends Component {
         });
     }
 
-    async componentDidMount() {
+    async componentWillMount() {
         const res = await axios.get('/api/processes');
 
         await this.setStateAsync({ processes: res });
@@ -24,7 +24,6 @@ class ProcessList extends Component {
     renderProcesses() {
         if (!this.state.processes.data) return null;
         return this.state.processes.data.map(process => {
-            console.log(process);
             return (
                 <ProcessItem
                     key={process._id}
