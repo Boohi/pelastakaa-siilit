@@ -14,15 +14,15 @@ module.exports = app => {
         });
         try {
             await process.save();
-            res.send(user);
+            res.send(req.user);
         } catch (err) {
             res.status(422).send(err);
         }
     });
 
     app.get('/api/processes', requireLogin, async (req, res) => {
-        const processes = await Process.find({_user: req.user.id});
+        const processes = await Process.find({ _user: req.user.id });
 
         res.send(processes);
-    })
+    });
 };
