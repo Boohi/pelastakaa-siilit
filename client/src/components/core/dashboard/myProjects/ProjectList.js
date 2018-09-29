@@ -15,7 +15,7 @@ class ProjectList extends Component {
         });
     }
 
-    async componentWillMount() {
+    async componentDidMount() {
         const res = await axios.get('/api/projects');
 
         await this.setStateAsync({ projects: res });
