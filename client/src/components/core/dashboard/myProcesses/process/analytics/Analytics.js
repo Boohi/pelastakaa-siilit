@@ -3,6 +3,7 @@ import './Analytics.css';
 import GridLayout from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
+import FileUpload from './FileUpload';
 
 class Analytics extends Component {
     render() {
@@ -19,6 +20,7 @@ class Analytics extends Component {
                         c
                     </div>
                 </GridLayout>
+                <FileUpload />
             </div>
         );
     }
