@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "axios": "^0.18.0",
+        "flow-bin": "^0.81.0",
         "materialize-css": "^1.0.0",
         "mxgraph": "^3.9.8",
         "mxgraph-js": "^1.0.1",
@@ -33,7 +34,8 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "flow": "flow"
     },
     "browserslist": [
         ">0.2%",
