@@ -11,29 +11,12 @@ class FileUpload extends Component {
     }
 
     handleUpload(ev) {
-        console.log(ev);
         ev.preventDefault();
-        console.log('testi');
         const data = new FormData();
-        console.log(data);
         data.append('file', this.uploadInput.files[0]);
         data.append('filename', this.fileName.value);
-        console.log(data);
 
-        axios
-            .post('http://localhost:3000/upload', data)
-            .then(function(response) {
-                console.log(data);
-                this.setState({
-                    uploadStatus: true
-                });
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-        console.log(this.filename);
-        console.log('test2');
-        console.log(data);
+        axios.post('/api/file_upload', data);
     }
 
     render() {

@@ -6,6 +6,7 @@ const passport = require('passport');
 const path = require('path');
 const keys = require('./config/keys');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
 
 require('./models/User');
 require('./models/Process');
@@ -19,6 +20,7 @@ const app = express();
 
 // Setup middleware
 app.use(bodyParser.json());
+app.use(fileUpload());
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -32,6 +34,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/processRoutes')(app);
 require('./routes/projectRoutes')(app);
+require('./routes/fileRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
