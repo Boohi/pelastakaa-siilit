@@ -18,7 +18,7 @@ class ProjectItem extends Component {
                                     state: { id: this.props.id }
                                 }}
                             >
-                                Go to process
+                                Go to project
                             </Link>
                         </div>
                     </div>

@@ -17,7 +17,10 @@ class Header extends Component {
             default:
                 return (
                     <li>
-                        <a href="/api/logout">Logout, {this.props.auth.lastName}</a>
+                        <a href="/api/logout">
+                            Logout, {this.props.auth.lastName}  
+                            <img alt="" className="google-profile-picture-1" src={this.props.auth.image}/>
+                        </a>
                     </li>
                 );
         }

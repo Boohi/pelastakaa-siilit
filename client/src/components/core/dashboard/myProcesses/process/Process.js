@@ -21,7 +21,7 @@ class Process extends Component {
             <div className="process">
                 <SplitPane split="horizontal" minSize={300} defaultSize={300}>
                     <Flow />
-                    <Analytics />
+                    <Analytics _id={this.state.id} />
                 </SplitPane>
             </div>
         );
