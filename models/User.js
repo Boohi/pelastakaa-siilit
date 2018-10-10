@@ -7,7 +7,8 @@ const userSchema = new Schema({
     lastName: String,
     role: String,
     company: String,
-    googleID: String
+    googleID: String,
+    image: String
 });
 
 mongoose.model('users', userSchema);

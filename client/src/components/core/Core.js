@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './navigation/Header';
-import SideNavigation from './navigation/SideNavigation';
+import Header from './Header';
+import SideNavigation from './SideNavigation';
 import Dashboard from './dashboard/Dashboard';
 import './Core.css';
 

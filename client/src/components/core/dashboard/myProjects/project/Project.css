@@ -1,0 +1,38 @@
+.project-container {
+    height: 100%;
+}
+
+.project-info {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    bottom: 0;
+}
+
+.project-members {
+    float: left;
+    background-color: green;
+    height: 100%;
+    width: 30%;
+}
+
+.project-definition {
+    float: left;
+    background-color: red;
+    height: 100%;
+    width: 30%;
+}
+
+.project-process {
+    float: left;
+    background-color: yellow;
+    height: 100%;
+    width: 30%;
+}
+
+.google-profile-picture-2 {
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 0px !important;
+    height: 32px;
+}
