@@ -11,6 +11,7 @@ const fileUpload = require('express-fileupload');
 require('./models/User');
 require('./models/Process');
 require('./models/Project');
+require('./models/ProcessData');
 require('./services/passport');
 
 // Connect to database

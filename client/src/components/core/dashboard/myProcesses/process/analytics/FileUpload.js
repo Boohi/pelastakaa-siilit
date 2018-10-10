@@ -15,6 +15,7 @@ class FileUpload extends Component {
         const data = new FormData();
         data.append('file', this.uploadInput.files[0]);
         data.append('filename', this.fileName.value);
+        data.append('_id', this.props._id );
 
         axios.post('/api/file_upload', data);
     }

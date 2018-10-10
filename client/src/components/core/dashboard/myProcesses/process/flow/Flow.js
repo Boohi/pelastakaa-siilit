@@ -6,6 +6,7 @@ class Flow extends Component {
     render() {
         return (
             <div className="flow-container">
+                {this.props._id}
                 <DiagramTool />
             </div>
         );
